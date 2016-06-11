@@ -1,3 +1,7 @@
-Image URL used: <%= @image_url %>
-<br/><br/>
-Message Sending Result Status: <%= @message_result.status %>
+<% if @number_of_results == 0%>
+  No image results found.
+<% else %>
+  Image URL used: <%= @image_url %>
+  <br/><br/>
+  Message Sending Result Status: <%= @message_result.status %>
+<% end %>
