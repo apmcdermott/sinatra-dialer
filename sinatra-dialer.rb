@@ -28,15 +28,15 @@ post '/' do
 
     @image_url = selected_result["images"]["fixed_height"]["url"]
 
-    # put your own credentials here 
-    account_sid = 'AC0cdeecfe4679db365c25a166f5ebfcf9' 
-    auth_token = '5c9219d5798ed86241acbd198bb0331b' 
+    TWILIO_ACCOUNT_SID="ACf5289c0b265d65b7440c27340aa1d0db"
+    TWILIO_AUTH_TOKEN="f2893578e96202c5d48c4bdf00c0fd9e"
+    TWILIO_FROM_NUMBER="16176525171"
      
     # set up a client to talk to the Twilio REST API 
-    @client = Twilio::REST::Client.new account_sid, auth_token 
+    @client = Twilio::REST::Client.new TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN 
      
     @message_result = @client.account.messages.create({
-      :from => '+16179350712', 
+      :from => TWILIO_FROM_NUMBER, 
       :to => cell_number, 
       :body => "You searched for " + search_term,
       :media_url => @image_url
