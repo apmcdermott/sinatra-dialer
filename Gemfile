@@ -2,7 +2,15 @@ source 'https://rubygems.org'
 
 gem 'sinatra'
 gem 'twilio-ruby'
-gem 'pry'
+
+# group :test do
+#   gem 'minitest'
+#   gem 'rack-test'
+# end
+
+group :development do
+  gem 'pry'
+end
 
 #Auto reload code while developing
 #gem 'rerun'
