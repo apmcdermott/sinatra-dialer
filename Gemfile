@@ -12,5 +12,9 @@ group :development do
   gem 'pry'
 end
 
+group :development, :test do
+  gem 'dotenv-rails'
+end
+
 #Auto reload code while developing
 #gem 'rerun'

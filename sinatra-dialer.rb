@@ -28,9 +28,9 @@ post '/' do
 
     @image_url = selected_result["images"]["fixed_height"]["url"]
 
-    TWILIO_ACCOUNT_SID="ACf5289c0b265d65b7440c27340aa1d0db"
-    TWILIO_AUTH_TOKEN="f2893578e96202c5d48c4bdf00c0fd9e"
-    TWILIO_FROM_NUMBER="16176525171"
+    TWILIO_ACCOUNT_SID = ENV["TWILIO_ACCOUNT_SID"]
+    TWILIO_AUTH_TOKEN = ENV["TWILIO_AUTH_TOKEN"]
+    TWILIO_FROM_NUMBER = ENV["TWILIO_FROM_NUMBER"]
      
     # set up a client to talk to the Twilio REST API 
     @client = Twilio::REST::Client.new TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN 
